@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://1g518n.sharepoint.com/sites/1g518n/SitePages/Home.aspx",
+      "customActions": {
+        "915fbfea-0f03-4219-ba11-7cb686c2c19b": {
+          "location": "ClientSideExtension.ApplicationCustomizer"
+        }
+      }
+    },
+    "oboGlobalNav": {
+      "pageUrl": "https://1g518n.sharepoint.com/sites/1g518n/SitePages/Home.aspx",
+      "customActions": {
+        "915fbfea-0f03-4219-ba11-7cb686c2c19b": {
+          "location": "ClientSideExtension.ApplicationCustomizer"
+        }
+      }
+    }
+  }
+}

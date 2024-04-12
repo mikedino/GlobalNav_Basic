@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "obo-global-nav-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/oboGlobalNav/OboGlobalNavApplicationCustomizer.js",
+          "manifest": "./src/extensions/oboGlobalNav/OboGlobalNavApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "gd-sprest": {
+      "path": "node_modules/gd-sprest-bs/dist/gd-sprest-bs.min.js",
+      "globalName": "$REST"
+    },
+    "gd-sprest-bs": {
+      "path": "node_modules/gd-sprest-bs/dist/gd-sprest-bs.min.js",
+      "globalName": "$REST"
+    }
+  },
+  "localizedResources": {
+    "OboGlobalNavApplicationCustomizerStrings": "lib/extensions/oboGlobalNav/loc/{locale}.js"
+  }
+}

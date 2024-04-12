@@ -1,0 +1,16 @@
+.customclass{
+
+    color: --bs-light;
+
+    .bs .navbar-brand:hover{
+        color: --bs-primary-bg-subtle;
+    }
+
+    .bs .nav-link{
+        color: --bs-light;
+
+        &:hover{
+            color: --bs-primary-bg-subtle;
+        }
+    }
+}

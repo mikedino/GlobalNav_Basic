@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="OboGlobalNav"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="915fbfea-0f03-4219-ba11-7cb686c2c19b"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>
