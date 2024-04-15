@@ -1,4 +1,4 @@
-import { Components } from "gd-sprest-bs";
+import { Components, ThemeManager } from "gd-sprest-bs";
 //import { buildings } from "gd-sprest-bs/src/icons/svgs/buildings";
 //import { buildings } from "gd-sprest-bs/build/icons/svgs/buildings";
 import { Log } from '@microsoft/sp-core-library';
@@ -12,8 +12,7 @@ import {
 
 import * as strings from 'OboGlobalNavApplicationCustomizerStrings';
 
-import "./NavStyles.scss";
-//require('./NavStyles.scss');
+//import "./NavStyles.scss";
 
 const LOG_SOURCE: string = 'OboGlobalNavApplicationCustomizer';
 
@@ -31,7 +30,7 @@ export interface IOboGlobalNavApplicationCustomizerProperties {
 export default class OboGlobalNavApplicationCustomizer
   extends BaseApplicationCustomizer<IOboGlobalNavApplicationCustomizerProperties> {
 
-  private _header:PlaceholderContent | any = null;
+  private _header: PlaceholderContent | any = null;
 
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
@@ -45,11 +44,14 @@ export default class OboGlobalNavApplicationCustomizer
     //   /* handle error */
     // });
 
-    // Handle possible changes on the existence of placeholders
-    this.context.placeholderProvider.changedEvent.add(this, this.renderGlobalNav);
+    // Load the theme
+    ThemeManager.load(true).then(() => {
+      // Handle possible changes on the existence of placeholders
+      this.context.placeholderProvider.changedEvent.add(this, this.renderGlobalNav);
 
-    // Render the navbars
-    this.renderGlobalNav();
+      // Render the navbars
+      this.renderGlobalNav();
+    });
 
     return Promise.resolve();
   }
@@ -60,7 +62,7 @@ export default class OboGlobalNavApplicationCustomizer
     // Ensure the header doesn't exist
 
     if (!this._header) {
-    
+
       // Create the header
       this._header = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
 
@@ -69,19 +71,22 @@ export default class OboGlobalNavApplicationCustomizer
         brand: "Dept Of State - OBO",
         el: this._header.domElement,
         items: [
-          { text: "OBO/CFSM", items: [
-              { text: "OBO/CFSM/CM", href: "/" }, 
+          {
+            text: "OBO/CFSM", items: [
+              { text: "OBO/CFSM/CM", href: "/" },
               { text: "OBO/CFSM/SM" }
-            ] 
+            ]
           },
-          { text: "OBO/COMP", items: [
-              { text: "OBO/COMP/FM" }, 
+          {
+            text: "OBO/COMP", items: [
+              { text: "OBO/COMP/FM" },
               { text: "OBO/COMP/P" }
             ]
           },
           { text: "OBO/EA" },
-          { text: "OBO/EX", items: [
-              { text: "OBO/EX/HR" }, 
+          {
+            text: "OBO/EX", items: [
+              { text: "OBO/EX/HR" },
               { text: "OBO/EX/IRM" },
               { text: "OBO/EX/MSD" }
             ]
