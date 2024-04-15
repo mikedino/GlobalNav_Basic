@@ -3,17 +3,22 @@
 $spfont: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .bs .navbar-brand:hover{
-    color: $ms-color-themeDarker !important;
+    color: $ms-color-white !important;
 }
 
-.bs .nav-link{
-    color: $ms-color-themeLighter !important;
+.bs .nav-link, .bs .dropdown-item{
+    color: $ms-color-neutralPrimary !important;
 
     &:hover{
-        color: $ms-color-themeDarker  !important;
+        color: $ms-color-white  !important;
     }
 }
 
 .bs .tippy-box, .bs .dropdown-item, .bs .tippy-content.bs{
     font-family: $spfont !important;
+}
+
+.bs .dropdown-menu{
+    font-size: 14px !important;
+    background-color: #0078d4 !important;
 }
