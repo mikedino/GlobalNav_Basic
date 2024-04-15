@@ -12,7 +12,8 @@ import {
 
 import * as strings from 'OboGlobalNavApplicationCustomizerStrings';
 
-require('./NavStyles.scss');
+import "./NavStyles.scss";
+//require('./NavStyles.scss');
 
 const LOG_SOURCE: string = 'OboGlobalNavApplicationCustomizer';
 
@@ -67,31 +68,30 @@ export default class OboGlobalNavApplicationCustomizer
       Components.Navbar({
         brand: "Dept Of State - OBO",
         el: this._header.domElement,
-        className: "customclass",
         items: [
-          { text: "OBO/CFSM", className: "customclass", items: [
+          { text: "OBO/CFSM", items: [
               { text: "OBO/CFSM/CM", href: "/" }, 
               { text: "OBO/CFSM/SM" }
             ] 
           },
-          { text: "OBO/COMP", className: "customclass", items: [
+          { text: "OBO/COMP", items: [
               { text: "OBO/COMP/FM" }, 
               { text: "OBO/COMP/P" }
             ]
           },
-          { text: "OBO/EA", className: "--sp-white" },
-          { text: "OBO/EX", className: "--sp-theme-light", items: [
+          { text: "OBO/EA" },
+          { text: "OBO/EX", items: [
               { text: "OBO/EX/HR" }, 
               { text: "OBO/EX/IRM" },
               { text: "OBO/EX/MSD" }
             ]
           },
-          { text: "OBO/EXEC", className: "--sp-white" },
-          { text: "OBO/FO", className: "--sp-white" }
-        ],
+          { text: "OBO/EXEC" },
+          { text: "OBO/FO" }
+        ]/*,
         searchBox: {
           placeholder: "My Custom Search"
-        }
+        }*/
       });
     }
   }

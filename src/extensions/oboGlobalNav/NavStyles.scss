@@ -1,16 +1,19 @@
-.customclass{
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
-    color: --bs-light;
+$spfont: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    .bs .navbar-brand:hover{
-        color: --bs-primary-bg-subtle;
+.bs .navbar-brand:hover{
+    color: $ms-color-themeDarker !important;
+}
+
+.bs .nav-link{
+    color: $ms-color-themeLighter !important;
+
+    &:hover{
+        color: $ms-color-themeDarker  !important;
     }
+}
 
-    .bs .nav-link{
-        color: --bs-light;
-
-        &:hover{
-            color: --bs-primary-bg-subtle;
-        }
-    }
+.bs .tippy-box, .bs .dropdown-item, .bs .tippy-content.bs{
+    font-family: $spfont !important;
 }
